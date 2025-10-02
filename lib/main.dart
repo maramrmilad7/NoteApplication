@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noteapp/views/notes_view.dart';
 
 void main() {
   runApp(const NoteApp());
@@ -6,12 +7,14 @@ void main() {
 
 class NoteApp extends StatelessWidget {
   const NoteApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    // This trailing comma makes auto-formatting nicer for build methods.
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: NotesView(),
     );
   }
 }
