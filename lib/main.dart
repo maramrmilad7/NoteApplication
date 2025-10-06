@@ -7,6 +7,7 @@ void main()async {
 
   await Hive.initFlutter();
   await Hive.openBox<NoteModel>('notes'); // = collection in firestore
+ Hive.registerAdapter(NoteModelAdapter());
   runApp(const NoteApp());
 }
 
