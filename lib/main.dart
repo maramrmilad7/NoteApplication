@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:noteapp/model/note_model.dart';
 import 'package:noteapp/views/notes_view.dart';
 
 void main()async {
+
   await Hive.initFlutter();
-  await Hive.openBox('notes'); // = collection infirestore
+  await Hive.openBox<NoteModel>('notes'); // = collection in firestore
   runApp(const NoteApp());
 }
 
