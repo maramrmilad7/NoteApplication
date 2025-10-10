@@ -3,9 +3,10 @@ import 'package:noteapp/widgets/customIcon.dart';
 
 class NotesAppBar extends StatelessWidget {
   const NotesAppBar({super.key, required this.title,
-   required this.icon});
+   required this.icon,  this.onPressed});
   final String title ;
   final IconData icon ;
+  final void Function()?  onPressed;
 
 
   @override
@@ -20,7 +21,7 @@ class NotesAppBar extends StatelessWidget {
           ),
         ),
         CustomIcon(
-          onPressed: (){},
+          onPressed: onPressed,
           icon: icon,
         ),
       ],
