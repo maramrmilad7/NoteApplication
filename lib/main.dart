@@ -10,8 +10,7 @@ void main()async {
 
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
-   Hive.registerAdapter(NoteModelAdapter());
-
+  Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>('notes'); // = collection in firestore
   runApp(const NoteApp());
 }
